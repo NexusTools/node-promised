@@ -1,7 +1,7 @@
-interface Executor<V> {
+export interface Executor<V> {
     (this: Promised<V>, resolve: Resolve<V>, reject: Reject, finished: () => boolean): void;
 }
-interface Reject {
+export interface Reject {
     /**
      * Reject and optionally specify why.
      *
@@ -10,7 +10,7 @@ interface Reject {
      */
     (reason?: any): true | void;
 }
-interface Resolve<V> {
+export interface Resolve<V> {
     /**
      * Resolves a value, or another promise to continue.
      *
@@ -19,7 +19,7 @@ interface Resolve<V> {
      */
     (value: V | PromiseLike<V> | Executor<V>): true | void;
 }
-interface Dispose<V> {
+export interface Dispose<V> {
     /**
      * Disposes of a value, safely.
      *
